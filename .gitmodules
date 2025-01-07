@@ -1,0 +1,3 @@
+[submodule "kitty/.config/kitty/gruvbox-material-kitty"]
+	path = kitty/.config/kitty/gruvbox-material-kitty
+	url = https://github.com/selenebun/gruvbox-material-kitty.git
