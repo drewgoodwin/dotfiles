@@ -1,3 +1,6 @@
 [submodule "kitty/.config/kitty/gruvbox-material-kitty"]
 	path = kitty/.config/kitty/gruvbox-material-kitty
 	url = https://github.com/selenebun/gruvbox-material-kitty.git
+[submodule "tmux/.config/tmux/plugins/tmux-gruvbox-material"]
+	path = tmux/.config/tmux/plugins/tmux-gruvbox-material
+	url = https://github.com/egel/tmux-gruvbox
