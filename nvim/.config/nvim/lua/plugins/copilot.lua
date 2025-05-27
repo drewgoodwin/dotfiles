@@ -1,9 +1,24 @@
 -- I recommend installing the optional dependencies for copilot chat listed here https://github.com/CopilotC-Nvim/CopilotChat.nvim?tab=readme-ov-file
 
 return {
-	{
-		"github/copilot.vim",
-	},
+	-- {
+	-- 	"github/copilot.vim",
+	-- },
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup({
+        suggestion = {
+          enabled = false,
+        },
+        panel = {
+          enabled = false,
+        },
+      })
+    end,
+  },
 	{
 		"CopilotC-Nvim/CopilotChat.nvim",
 		dependencies = {
@@ -33,8 +48,10 @@ return {
 	},
 	{
 		"zbirenbaum/copilot-cmp",
+    after = { "copilot.lua" },
 		config = function()
 			require("copilot_cmp").setup()
 		end,
 	},
 }
+
