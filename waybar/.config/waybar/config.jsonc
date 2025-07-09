@@ -1,6 +1,6 @@
 {
   "position": "top",
-  "margin-top": 10,
+  "margin-top": 5,
   "margin-left": 10,
   "margin-right": 10,
   "modules-left": ["custom/wlogout", "hyprland/workspaces"],
