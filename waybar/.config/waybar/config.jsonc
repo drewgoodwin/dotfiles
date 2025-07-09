@@ -1,5 +1,8 @@
 {
   "position": "top",
+  "margin-top": 10,
+  "margin-left": 10,
+  "margin-right": 10,
   "modules-left": ["custom/wlogout", "hyprland/workspaces"],
   "modules-center": ["hyprland/window"],
   "modules-right": [
@@ -10,12 +13,12 @@
     "clock",
   ],
   "custom/wlogout": {
-    "format": "",
+    "format": " ",
     "interval": "once",
     "on-click": "sleep 0.1 && wlogout -c 5 -r 5 -p layer-shell",
   },
   "clock": {
-    "format": "<span>    </span>{:%a %d %H:%M}",
+    "format": "<span>    </span>{:%a %d %H:%M} ",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
   },
   "battery": {

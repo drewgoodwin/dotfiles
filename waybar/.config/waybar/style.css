@@ -4,6 +4,7 @@
 	all: unset;
 	font-family: "Symbols Nerd Font Mono", "JetBrains Mono";
 	font-size: 14px;
+  border-radius: 0.50em;
 }
 
 tooltip {
