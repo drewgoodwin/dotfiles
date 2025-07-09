@@ -1,8 +1,19 @@
 {
   "position": "top",
-  "modules-left": ["hyprland/workspaces"],
+  "modules-left": ["custom/wlogout", "hyprland/workspaces"],
   "modules-center": ["hyprland/window"],
-  "modules-right": ["network", "pulseaudio", "battery", "power-profiles-daemon", "clock"],
+  "modules-right": [
+    "network",
+    "pulseaudio",
+    "battery",
+    "power-profiles-daemon",
+    "clock",
+  ],
+  "custom/wlogout": {
+    "format": "",
+    "interval": "once",
+    "on-click": "sleep 0.1 && wlogout -c 5 -r 5 -p layer-shell",
+  },
   "clock": {
     "format": "<span>    </span>{:%a %d %H:%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
@@ -38,15 +49,15 @@
     },
     "on-click": "pavucontrol",
   },
-"power-profiles-daemon": {
-  "format": "{icon}",
-  "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-  "tooltip": true,
-  "format-icons": {
-    "default": "",
-    "performance": "",
-    "balanced": "",
-    "power-saver": ""
-  }
-}
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": "",
+    },
+  },
 }
