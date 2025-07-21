@@ -38,6 +38,7 @@ return {
               -- ...
               return vim_item
             end,
+            symbol_map = { Copilot = "" }
           }),
         },
         snippet = {
