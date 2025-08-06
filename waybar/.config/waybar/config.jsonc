@@ -9,6 +9,7 @@
     "network",
     "pulseaudio",
     "battery",
+    "bluetooth",
     "power-profiles-daemon",
     "clock",
   ],
@@ -43,6 +44,7 @@
     "format-disconnected": "<span size='13000' foreground='#f5e0dc'>  </span>Disconnected",
     "tooltip-format-wifi": "Signal Strenght: {signalStrength}%",
     "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "on-click-right": "kitty -e nmtui"
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
@@ -51,6 +53,13 @@
       "default": ["", "", " "],
     },
     "on-click": "pavucontrol",
+  }, 
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "󰂲",
+    "format-connected": "",
+    "tooltip-format": "Devices connected: {num_connections}",
+    "on-click": "blueman-manager"
   },
   "power-profiles-daemon": {
     "format": "{icon}",
