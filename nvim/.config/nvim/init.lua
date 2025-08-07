@@ -17,4 +17,5 @@ vim.cmd("set number")
 require('lualine').setup()
 vim.keymap.set('n', '<leader>n', ':Neotree filesystem reveal left<CR>', {})
 vim.keymap.set('n', '<leader>c', ':Neotree filesystem close<CR>', {})
+vim.keymap.set('n', '<leader>b', ':cclose<CR>', {})
 vim.opt.wrap = false
