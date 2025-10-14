@@ -13,6 +13,9 @@ vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' 
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 vim.cmd.colorscheme('gruvbox-material')
 --vim.cmd.colorscheme('catppuccin')
+
+
+
 vim.cmd("set number")
 require('lualine').setup()
 vim.keymap.set('n', '<leader>n', ':Neotree filesystem reveal left<CR>', {})
