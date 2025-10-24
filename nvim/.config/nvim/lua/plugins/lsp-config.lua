@@ -9,20 +9,17 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "ts_ls", "marksman" }
+        ensure_installed = { "lua_ls", "ts_ls", "marksman", "sqls" }
       })
     end
   },
   {
     "neovim/nvim-lspconfig",
     config = function()
-      -- local lspconfig = require("lspconfig")
-      -- lspconfig.lua_ls.setup({})
-      -- lspconfig.ts_ls.setup({})
-      -- lspconfig.marksman.setup({})
       vim.lsp.config('lua_ls', {})
       vim.lsp.config('ts_ls', {})
       vim.lsp.config('marksman', {})
+      vim.lsp.config('sqls', {})
       vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
       vim.keymap.set({'n'}, '<leader>gr', vim.lsp.buf.references, {})
       vim.keymap.set({'n','v'}, '<leader>gd', vim.lsp.buf.definition, {})
