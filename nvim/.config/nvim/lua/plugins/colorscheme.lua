@@ -1,5 +1,5 @@
 return {
-	{
+  {
     "catppuccin/nvim",
     name = "catppuccin",
     opts = {},
@@ -16,11 +16,8 @@ return {
     },
     priority = 1000,
     config = function()
-      -- Optionally configure and load the colorscheme
-      -- directly inside the plugin declaration.
       vim.g.gruvbox_material_enable_italic = true
-      --vim.cmd.colorscheme('gruvbox-material')
-      vim.g.gruvbox_material_background = 'transparent_mode'
+      vim.g.gruvbox_material_transparent_background = 1
     end
   },
 }

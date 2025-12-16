@@ -1,24 +1,25 @@
 require("config.lazy")
 
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
-vim.cmd("set shiftwidth=2")
-vim.cmd("set relativenumber")
-
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
-vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
-vim.cmd.colorscheme('gruvbox-material')
---vim.cmd.colorscheme('catppuccin')
-
-
-
-vim.cmd("set number")
-require('lualine').setup()
-vim.keymap.set('n', '<leader>n', ':Neotree filesystem reveal left<CR>', {})
-vim.keymap.set('n', '<leader>c', ':Neotree filesystem close<CR>', {})
-vim.keymap.set('n', '<leader>b', ':cclose<CR>', {})
+-- Editor settings
+vim.opt.expandtab = true
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.number = true
+vim.opt.relativenumber = true
 vim.opt.wrap = false
+vim.opt.signcolumn = "yes"  -- Always show sign column
+vim.opt.updatetime = 250     -- Faster completion
+vim.opt.timeoutlen = 300     -- Faster which-key popup
+
+-- Set colorscheme (must be after lazy.nvim loads)
+vim.cmd.colorscheme('gruvbox-material')
+
+-- General keymaps
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc = 'Clear search highlights' })
+vim.keymap.set('n', '<leader>b', '<cmd>cclose<CR>', { desc = 'Close quickfix' })
+
+-- Buffer navigation
+vim.keymap.set('n', '[b', '<cmd>bprevious<CR>', { desc = 'Previous buffer' })
+vim.keymap.set('n', ']b', '<cmd>bnext<CR>', { desc = 'Next buffer' })
+
