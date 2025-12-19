@@ -49,11 +49,14 @@ return {
       })
       
       -- TypeScript/JavaScript Language Server
+      local ts_capabilities = vim.deepcopy(capabilities)
+      ts_capabilities.documentFormattingProvider = false
+      ts_capabilities.documentRangeFormattingProvider = false
       vim.lsp.config('ts_ls', {
         cmd = { 'typescript-language-server', '--stdio' },
         filetypes = { 'javascript', 'javascriptreact', 'javascript.jsx', 'typescript', 'typescriptreact', 'typescript.tsx' },
         root_markers = { 'package.json', 'tsconfig.json', 'jsconfig.json', '.git' },
-        capabilities = capabilities,
+        capabilities = ts_capabilities,
       })
       
       -- JSON Language Server

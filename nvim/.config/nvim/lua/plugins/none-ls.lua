@@ -9,7 +9,10 @@ return {
       debug = true,
       sources = {
         null_ls.builtins.formatting.stylua,
-        null_ls.builtins.formatting.prettier,
+        null_ls.builtins.formatting.prettier.with({
+          -- Force prettier to find and use config file from project root
+          prefer_local = "node_modules/.bin",
+        }),
         null_ls.builtins.diagnostics.erb_lint,
         null_ls.builtins.diagnostics.rubocop,
         null_ls.builtins.formatting.rubocop,
@@ -17,6 +20,13 @@ return {
       },
     })
 
-    vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
+    vim.keymap.set("n", "<leader>gf", function()
+      vim.lsp.buf.format({
+        filter = function(client)
+          -- Only use null-ls for formatting, ignore other LSP formatters
+          return client.name == "null-ls"
+        end,
+      })
+    end, {})
   end,
 }
