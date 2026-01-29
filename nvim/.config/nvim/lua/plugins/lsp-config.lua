@@ -9,7 +9,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "ts_ls", "marksman", "sqls", "jsonls", "yamlls", "clangd" }
+        ensure_installed = { "lua_ls", "ts_ls", "marksman", "sqls", "jsonls", "yamlls", "clangd", "intelephense" }
       })
     end
   },
@@ -110,6 +110,21 @@ return {
         filetypes = { 'sql', 'mysql' },
         root_markers = { '.git', '.sqls.yml' },
         capabilities = capabilities,
+      })
+      
+      -- PHP Language Server (Intelephense)
+      vim.lsp.config('intelephense', {
+        cmd = { 'intelephense', '--stdio' },
+        filetypes = { 'php' },
+        root_markers = { 'composer.json', '.git' },
+        capabilities = capabilities,
+        settings = {
+          intelephense = {
+            files = {
+              maxSize = 1000000,
+            },
+          },
+        },
       })
       
       -- LSP Keymaps

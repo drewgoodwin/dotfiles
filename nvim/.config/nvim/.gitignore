@@ -1,1 +1,4 @@
 lazy-lock.json
+
+# Intelephense license and cache files
+intelephense/
