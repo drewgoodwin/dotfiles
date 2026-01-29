@@ -52,7 +52,8 @@ For debugging support with nvim-dap, install XDebug:
 sudo pacman -S xdebug
 
 # Ubuntu/Debian
-sudo apt install xdebug
+# Package name may be `php-xdebug` or versioned like `php8.2-xdebug` depending on your distro
+sudo apt install php-xdebug
 
 # macOS (via PECL)
 pecl install xdebug
