@@ -20,18 +20,18 @@ return {
     
     -- Document existing leader key groups
     wk.add({
+      { "<leader>d", group = "Debug" },
       { "<leader>f", group = "Find (Telescope)" },
       { "<leader>g", group = "Go to / Git" },
       { "<leader>h", group = "Hunk (Git)" },
+      { "<leader>r", group = "Rename" },
       { "<leader>t", group = "Toggle / Test" },
       { "<leader>z", group = "Copilot" },
-      { "<leader>c", desc = "Close Neo-tree" },
-      { "<leader>d", group = "Debug" },
-      { "<leader>n", desc = "Open Neo-tree" },
       { "<leader>b", desc = "Close quickfix" },
-      { "<leader>q", desc = "Diagnostic loclist" },
-      { "<leader>r", group = "Rename" },
+      { "<leader>c", desc = "Close Neo-tree" },
       { "<leader>e", desc = "Show diagnostic" },
+      { "<leader>n", desc = "Open Neo-tree" },
+      { "<leader>q", desc = "Diagnostic loclist" },
     })
   end,
 }
