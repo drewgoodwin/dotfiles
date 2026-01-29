@@ -17,7 +17,6 @@ return {
         null_ls.builtins.diagnostics.rubocop,
         null_ls.builtins.formatting.rubocop,
         require("none-ls.diagnostics.eslint_d"),
-        
         -- PHP formatting and linting (requires external tool installation)
         -- Install via: composer global require friendsofphp/php-cs-fixer squizlabs/php_codesniffer phpstan/phpstan
         -- See Readme.md for detailed installation instructions
