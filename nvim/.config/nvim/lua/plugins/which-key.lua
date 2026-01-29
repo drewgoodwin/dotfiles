@@ -26,6 +26,7 @@ return {
       { "<leader>t", group = "Toggle / Test" },
       { "<leader>z", group = "Copilot" },
       { "<leader>c", desc = "Close Neo-tree" },
+      { "<leader>d", group = "Debug" },
       { "<leader>n", desc = "Open Neo-tree" },
       { "<leader>b", desc = "Close quickfix" },
       { "<leader>q", desc = "Diagnostic loclist" },
