@@ -1,0 +1,16 @@
+[user]
+  email = drewgoodwin@gmail.com
+  name = drewgoodwin
+[credential]
+  helper = cache
+[core]
+  pager = delta
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  syntax-theme = gruvbox-dark
+  navigate = true
+  dark = true
+  side-by-side = true
+[merge]
+  conflictstyle = zdiff3
