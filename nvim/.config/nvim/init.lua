@@ -12,6 +12,10 @@ vim.opt.signcolumn = "yes"  -- Always show sign column
 vim.opt.updatetime = 250     -- Faster completion
 vim.opt.timeoutlen = 300     -- Faster which-key popup
 
+-- Enable project-local configuration files
+vim.opt.exrc = true          -- Enable reading .nvim.lua, .nvimrc, .exrc files
+vim.opt.secure = true        -- Restrict dangerous commands in project-local config
+
 -- Set colorscheme (must be after lazy.nvim loads)
 vim.cmd.colorscheme('gruvbox-material')
 
