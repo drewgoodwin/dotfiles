@@ -8,22 +8,21 @@ vim.opt.shiftwidth = 2
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.wrap = false
-vim.opt.signcolumn = "yes"  -- Always show sign column
-vim.opt.updatetime = 250     -- Faster completion
-vim.opt.timeoutlen = 300     -- Faster which-key popup
+vim.opt.signcolumn = "yes" -- Always show sign column
+vim.opt.updatetime = 250 -- Faster completion
+vim.opt.timeoutlen = 300 -- Faster which-key popup
 
 -- Enable project-local configuration files
-vim.opt.exrc = true          -- Enable reading .nvim.lua, .nvimrc, .exrc files
-vim.opt.secure = true        -- Restrict dangerous commands in project-local config
+vim.opt.exrc = true -- Enable reading .nvim.lua, .nvimrc, .exrc files
+vim.opt.secure = true -- Restrict dangerous commands in project-local config
 
 -- Set colorscheme (must be after lazy.nvim loads)
-vim.cmd.colorscheme('gruvbox-material')
+vim.cmd.colorscheme("gruvbox-material")
 
 -- General keymaps
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc = 'Clear search highlights' })
-vim.keymap.set('n', '<leader>b', '<cmd>cclose<CR>', { desc = 'Close quickfix' })
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlights" })
+vim.keymap.set("n", "<leader>b", "<cmd>cclose<CR>", { desc = "Close quickfix" })
 
 -- Buffer navigation
-vim.keymap.set('n', '[b', '<cmd>bprevious<CR>', { desc = 'Previous buffer' })
-vim.keymap.set('n', ']b', '<cmd>bnext<CR>', { desc = 'Next buffer' })
-
+vim.keymap.set("n", "[b", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
+vim.keymap.set("n", "]b", "<cmd>bnext<CR>", { desc = "Next buffer" })
