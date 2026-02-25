@@ -6,6 +6,7 @@
   "modules-left": ["custom/wlogout", "hyprland/workspaces"],
   "modules-center": ["hyprland/window"],
   "modules-right": [
+    "custom/slack",
     "network",
     "pulseaudio",
     "battery",
@@ -71,5 +72,12 @@
       "balanced": "",
       "power-saver": "",
     },
+  },
+  "custom/slack": {
+    "exec": "~/.config/waybar/scripts/slack-count.sh",
+    "return-type": "json",
+    "interval": 5,
+    "on-click": "hyprctl dispatch focuswindow com.slack.Slack",
+    "format": "{}",
   },
 }

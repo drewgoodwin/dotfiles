@@ -113,7 +113,8 @@ window#waybar {
 #tray,
 #network,
 #mode,
-#scratchpad {
+#scratchpad,
+#custom-slack {
   margin-top: 2px;
   margin-bottom: 2px;
   margin-left: 4px;
@@ -279,4 +280,19 @@ window#waybar {
 	color: @bg_dim;
 	padding: 2px 0px 0px 0px;
 	font-size: 16px;
+}
+
+/* Slack notifications */
+#custom-slack {
+	padding: 2px 0px;
+	color: @fg0;
+}
+
+#custom-slack.has-notifications {
+	color: #E01E5A;
+	font-weight: bold;
+}
+
+#custom-slack.offline {
+	opacity: 0.5;
 }
