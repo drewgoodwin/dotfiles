@@ -30,7 +30,7 @@ fi
 
 # Format output for waybar
 if [ "$count" -gt 0 ]; then
-    echo "{\"text\": \"  $count\", \"tooltip\": \"$count unread Slack messages\", \"class\": \"has-notifications\"}"
+    echo "{\"text\": \" $count\", \"tooltip\": \"$count unread Slack messages\", \"class\": \"has-notifications\"}"
 else
     echo "{\"text\": \"\", \"tooltip\": \"No unread Slack messages\", \"class\": \"no-notifications\"}"
 fi
