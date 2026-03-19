@@ -32,6 +32,7 @@ return {
 			{ "<leader>e", desc = "Show diagnostic" },
 			{ "<leader>n", desc = "Open Neo-tree" },
 			{ "<leader>q", desc = "Diagnostic loclist" },
+			{ "<leader>sk", desc = "Toggle Showkeys" },
 		})
 	end,
 }
