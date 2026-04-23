@@ -301,3 +301,7 @@ window#waybar {
 #custom-slack.offline {
   opacity: 0.5;
 }
+
+#keyboard-state {
+  color: @bg3;
+}

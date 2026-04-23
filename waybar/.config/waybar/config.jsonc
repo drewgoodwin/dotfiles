@@ -3,7 +3,7 @@
   "margin-top": 5,
   "margin-left": 10,
   "margin-right": 10,
-  "modules-left": ["custom/wlogout", "hyprland/workspaces"],
+  "modules-left": ["custom/wlogout", "keyboard-state", "hyprland/workspaces"],
   "modules-center": ["hyprland/window"],
   "modules-right": [
     "custom/slack",
@@ -12,21 +12,31 @@
     "battery",
     "bluetooth",
     "power-profiles-daemon",
-    "clock",
+    "clock"
   ],
+  "keyboard-state": {
+    "numlock": true,
+    "capslock": true,
+    "scrolllock": false,
+    "format": " {name} {icon}",
+    "format-icons": {
+      "locked": " ",
+      "unlocked": " "
+    }
+  },
   "custom/wlogout": {
     "format": " ",
     "interval": "once",
-    "on-click": "sleep 0.1 && wlogout -c 5 -r 5 -p layer-shell",
+    "on-click": "sleep 0.1 && wlogout -c 5 -r 5 -p layer-shell"
   },
   "clock": {
     "format": "<span>    </span>{:%a %d %H:%M} ",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
   "battery": {
     "states": {
       "warning": 30,
-      "critical": 15,
+      "critical": 15
     },
     "format": "<span size='13000' foreground='#a6e3a1'>{icon} </span> {capacity}%",
     "format-warning": "<span size='13000' foreground='#B1E3AD'>{icon} </span> {capacity}%",
@@ -36,7 +46,7 @@
     "format-alt": "<span size='13000' foreground='#B1E3AD'>{icon} </span> {time}",
     "format-full": "<span> </span>{capacity}%",
     "format-icons": ["", "", "", "", ""],
-    "tooltip-format": "{time}",
+    "tooltip-format": "{time}"
   },
   "network": {
     "format-wifi": "<span size='13000' foreground='#f5e0dc'>  </span>{essid}",
@@ -51,10 +61,10 @@
     "format": "{icon} {volume}%",
     "format-muted": "",
     "format-icons": {
-      "default": ["", "", " "],
+      "default": ["", "", " "]
     },
-    "on-click": "pavucontrol",
-  }, 
+    "on-click": "pavucontrol"
+  },
   "bluetooth": {
     "format": "",
     "format-disabled": "󰂲",
@@ -70,14 +80,14 @@
       "default": "",
       "performance": "",
       "balanced": "",
-      "power-saver": "",
-    },
+      "power-saver": ""
+    }
   },
   "custom/slack": {
     "exec": "~/.config/waybar/scripts/slack-count.sh",
     "return-type": "json",
     "interval": 5,
     "on-click": "workspace=$(hyprctl clients -j | jq -r '.[] | select(.class == \"com.slack.Slack\") | .workspace.name') && [ -n \"$workspace\" ] && hyprctl dispatch workspace \"$workspace\" && hyprctl dispatch focuswindow com.slack.Slack",
-    "format": "{}",
-  },
+    "format": "{}"
+  }
 }
