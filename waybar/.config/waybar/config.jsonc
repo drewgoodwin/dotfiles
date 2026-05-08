@@ -12,7 +12,7 @@
     "battery",
     "bluetooth",
     "power-profiles-daemon",
-    "clock"
+    "clock",
   ],
   "keyboard-state": {
     "numlock": true,
@@ -21,22 +21,43 @@
     "format": " {name} {icon}",
     "format-icons": {
       "locked": " ",
-      "unlocked": " "
-    }
+      "unlocked": " ",
+    },
   },
   "custom/wlogout": {
     "format": " ",
     "interval": "once",
-    "on-click": "sleep 0.1 && wlogout -c 5 -r 5 -p layer-shell"
+    "on-click": "sleep 0.1 && wlogout -c 5 -r 5 -p layer-shell",
   },
   "clock": {
     "format": "<span>    </span>{:%a %d %H:%M} ",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "iso8601": true,
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>",
+      },
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down",
+    },
   },
   "battery": {
     "states": {
       "warning": 30,
-      "critical": 15
+      "critical": 15,
     },
     "format": "<span size='13000' foreground='#a6e3a1'>{icon} </span> {capacity}%",
     "format-warning": "<span size='13000' foreground='#B1E3AD'>{icon} </span> {capacity}%",
@@ -46,7 +67,7 @@
     "format-alt": "<span size='13000' foreground='#B1E3AD'>{icon} </span> {time}",
     "format-full": "<span> </span>{capacity}%",
     "format-icons": ["", "", "", "", ""],
-    "tooltip-format": "{time}"
+    "tooltip-format": "{time}",
   },
   "network": {
     "format-wifi": "<span size='13000' foreground='#f5e0dc'>  </span>{essid}",
@@ -55,22 +76,22 @@
     "format-disconnected": "<span size='13000' foreground='#f5e0dc'>  </span>Disconnected",
     "tooltip-format-wifi": "Signal Strenght: {signalStrength}%",
     "format-alt": "{ifname}: {ipaddr}/{cidr}",
-    "on-click-right": "kitty -e nmtui"
+    "on-click-right": "kitty -e nmtui",
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
     "format-muted": "",
     "format-icons": {
-      "default": ["", "", " "]
+      "default": ["", "", " "],
     },
-    "on-click": "pavucontrol"
+    "on-click": "pavucontrol",
   },
   "bluetooth": {
     "format": "",
     "format-disabled": "󰂲",
     "format-connected": "",
     "tooltip-format": "Devices connected: {num_connections}",
-    "on-click": "blueman-manager"
+    "on-click": "blueman-manager",
   },
   "power-profiles-daemon": {
     "format": "{icon}",
@@ -80,14 +101,14 @@
       "default": "",
       "performance": "",
       "balanced": "",
-      "power-saver": ""
-    }
+      "power-saver": "",
+    },
   },
   "custom/slack": {
     "exec": "~/.config/waybar/scripts/slack-count.sh",
     "return-type": "json",
     "interval": 5,
     "on-click": "workspace=$(hyprctl clients -j | jq -r '.[] | select(.class == \"com.slack.Slack\") | .workspace.name') && [ -n \"$workspace\" ] && hyprctl dispatch workspace \"$workspace\" && hyprctl dispatch focuswindow com.slack.Slack",
-    "format": "{}"
-  }
+    "format": "{}",
+  },
 }
