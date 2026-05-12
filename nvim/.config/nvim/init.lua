@@ -11,6 +11,7 @@ vim.opt.wrap = false
 vim.opt.signcolumn = "yes" -- Always show sign column
 vim.opt.updatetime = 250 -- Faster completion
 vim.opt.timeoutlen = 300 -- Faster which-key popup
+vim.o.winborder = "rounded" -- Default border for all floating windows
 
 -- Enable project-local configuration files
 vim.opt.exrc = true -- Enable reading .nvim.lua, .nvimrc, .exrc files

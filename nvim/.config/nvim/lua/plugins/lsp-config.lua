@@ -172,12 +172,15 @@ return {
 				callback = function(args)
 					local opts = { buf = args.buf }
 					vim.keymap.set("n", "K", vim.lsp.buf.hover, vim.tbl_extend("force", opts, { desc = "Hover documentation" }))
-					vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, vim.tbl_extend("force", opts, { desc = "Go to references" }))
-					vim.keymap.set({ "n", "v" }, "<leader>gd", vim.lsp.buf.definition, vim.tbl_extend("force", opts, { desc = "Go to definition" }))
-					vim.keymap.set("n", "<leader>gD", vim.lsp.buf.declaration, vim.tbl_extend("force", opts, { desc = "Go to declaration" }))
-					vim.keymap.set("n", "<leader>gi", vim.lsp.buf.implementation, vim.tbl_extend("force", opts, { desc = "Go to implementation" }))
-					vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, vim.tbl_extend("force", opts, { desc = "Code action" }))
-					vim.keymap.set({ "n", "v" }, "<leader>rn", vim.lsp.buf.rename, vim.tbl_extend("force", opts, { desc = "Rename" }))
+					vim.keymap.set("n", "grr", vim.lsp.buf.references, vim.tbl_extend("force", opts, { desc = "References" }))
+					vim.keymap.set({ "n", "v" }, "grd", vim.lsp.buf.definition, vim.tbl_extend("force", opts, { desc = "Definition" }))
+					vim.keymap.set("n", "gri", vim.lsp.buf.implementation, vim.tbl_extend("force", opts, { desc = "Implementation" }))
+					vim.keymap.set({ "n", "v" }, "gra", vim.lsp.buf.code_action, vim.tbl_extend("force", opts, { desc = "Code action" }))
+					vim.keymap.set("n", "grn", vim.lsp.buf.rename, vim.tbl_extend("force", opts, { desc = "Rename" }))
+					vim.keymap.set("n", "grt", vim.lsp.buf.type_definition, vim.tbl_extend("force", opts, { desc = "Type definition" }))
+					vim.keymap.set("n", "grx", vim.lsp.codelens.run, vim.tbl_extend("force", opts, { desc = "Codelens run" }))
+					vim.keymap.set("n", "<leader>gD", vim.lsp.buf.declaration, vim.tbl_extend("force", opts, { desc = "Declaration" }))
+					vim.lsp.codelens.enable(true)
 				end,
 			})
 
@@ -186,6 +189,18 @@ return {
 			vim.keymap.set("n", "[d", function() vim.diagnostic.jump({ count = -1, float = true }) end, { desc = "Previous diagnostic" })
 			vim.keymap.set("n", "]d", function() vim.diagnostic.jump({ count = 1, float = true }) end, { desc = "Next diagnostic" })
 			vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Diagnostic loclist" })
+
+			-- Explicitly enable all configured LSP servers
+			vim.lsp.enable({
+				"lua_ls",
+				"ts_ls",
+				"jsonls",
+				"yamlls",
+				"marksman",
+				"sqls",
+				"intelephense",
+				"clangd",
+			})
 		end,
 	},
 }

@@ -24,7 +24,6 @@ return {
 			{ "<leader>f", group = "Find (Telescope)" },
 			{ "<leader>g", group = "Go to / Git" },
 			{ "<leader>h", group = "Hunk (Git)" },
-			{ "<leader>r", group = "Rename" },
 			{ "<leader>t", group = "Test" },
 			{ "<leader>z", group = "Copilot" },
 			{ "<leader>b", desc = "Close quickfix" },
