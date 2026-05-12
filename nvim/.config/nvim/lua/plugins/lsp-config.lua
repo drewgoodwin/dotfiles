@@ -152,17 +152,37 @@ return {
 				},
 			})
 
-			-- LSP Keymaps
-			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover documentation" })
-			vim.keymap.set({ "n" }, "<leader>gr", vim.lsp.buf.references, { desc = "Go to references" })
-			vim.keymap.set({ "n", "v" }, "<leader>gd", vim.lsp.buf.definition, { desc = "Go to definition" })
-			vim.keymap.set({ "n" }, "<leader>gD", vim.lsp.buf.declaration, { desc = "Go to declaration" })
-			vim.keymap.set({ "n" }, "<leader>gi", vim.lsp.buf.implementation, { desc = "Go to implementation" })
-			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
-			vim.keymap.set({ "n", "v" }, "<leader>rn", vim.lsp.buf.rename, { desc = "Rename" })
-			vim.keymap.set({ "n" }, "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic" })
+			-- C/C++ Language Server
+			vim.lsp.config("clangd", {
+				cmd = { "clangd" },
+				filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
+				root_markers = {
+					".clangd",
+					".clang-format",
+					"compile_commands.json",
+					"compile_flags.txt",
+					"configure.ac",
+					".git",
+				},
+				capabilities = capabilities,
+			})
 
-			-- Diagnostic navigation
+			-- LSP keymaps: buffer-local, only active when an LSP is attached
+			vim.api.nvim_create_autocmd("LspAttach", {
+				callback = function(args)
+					local opts = { buf = args.buf }
+					vim.keymap.set("n", "K", vim.lsp.buf.hover, vim.tbl_extend("force", opts, { desc = "Hover documentation" }))
+					vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, vim.tbl_extend("force", opts, { desc = "Go to references" }))
+					vim.keymap.set({ "n", "v" }, "<leader>gd", vim.lsp.buf.definition, vim.tbl_extend("force", opts, { desc = "Go to definition" }))
+					vim.keymap.set("n", "<leader>gD", vim.lsp.buf.declaration, vim.tbl_extend("force", opts, { desc = "Go to declaration" }))
+					vim.keymap.set("n", "<leader>gi", vim.lsp.buf.implementation, vim.tbl_extend("force", opts, { desc = "Go to implementation" }))
+					vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, vim.tbl_extend("force", opts, { desc = "Code action" }))
+					vim.keymap.set({ "n", "v" }, "<leader>rn", vim.lsp.buf.rename, vim.tbl_extend("force", opts, { desc = "Rename" }))
+				end,
+			})
+
+			-- Diagnostic keymaps: global, diagnostics are not LSP-exclusive
+			vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic" })
 			vim.keymap.set("n", "[d", function() vim.diagnostic.jump({ count = -1, float = true }) end, { desc = "Previous diagnostic" })
 			vim.keymap.set("n", "]d", function() vim.diagnostic.jump({ count = 1, float = true }) end, { desc = "Next diagnostic" })
 			vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Diagnostic loclist" })
