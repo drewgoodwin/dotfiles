@@ -114,7 +114,7 @@
     "exec": "~/.config/waybar/scripts/slack-count.sh",
     "return-type": "json",
     "interval": 5,
-    "on-click": "workspace=$(hyprctl clients -j | jq -r '.[] | select(.class == \"com.slack.Slack\") | .workspace.name') && [ -n \"$workspace\" ] && hyprctl dispatch workspace \"$workspace\" && hyprctl dispatch focuswindow com.slack.Slack",
+    "on-click": "hyprctl dispatch 'hl.dsp.focus({ window = \"class:com.slack.Slack\" })'",
     "format": "{}"
   }
 }
