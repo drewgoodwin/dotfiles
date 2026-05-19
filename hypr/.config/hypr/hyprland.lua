@@ -12,6 +12,7 @@ hl.monitor({ output = "HDMI-A-1", mode = "preferred", position = "0x0", scale = 
 local terminal = "kitty"
 local fileManager = "nautilus"
 local menu = "wofi --show drun --allow-images"
+local menu_run_mode = "wofi --show run"
 local browser = "brave --new-window --ozone-platform=wayland"
 local waybar = "waybar"
 local swaync = "swaync"
@@ -222,6 +223,7 @@ hl.bind(mainMod .. " + V", function()
     hl.dispatch(hl.dsp.window.center({}))
 end)
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd(menu_run_mode))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(mainMod .. " + F", function()
