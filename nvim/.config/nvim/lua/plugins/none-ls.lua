@@ -8,10 +8,17 @@ return {
 		null_ls.setup({
 			sources = {
 				null_ls.builtins.formatting.stylua,
-				null_ls.builtins.formatting.prettier.with({
-					-- Force prettier to find and use config file from project root
-					prefer_local = "node_modules/.bin",
-				}),
+			null_ls.builtins.formatting.prettier.with({
+				-- Force prettier to find and use config file from project root
+				prefer_local = "node_modules/.bin",
+				-- Disable trailing commas for jsonc by default (can be overridden per-project via .prettierrc)
+				extra_args = function(params)
+					if params.ft == "jsonc" then
+						return { "--trailing-comma", "none" }
+					end
+					return {}
+				end,
+			}),
 				null_ls.builtins.diagnostics.erb_lint,
 				null_ls.builtins.diagnostics.rubocop,
 				null_ls.builtins.formatting.rubocop,
