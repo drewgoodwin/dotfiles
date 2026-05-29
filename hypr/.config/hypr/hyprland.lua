@@ -205,6 +205,11 @@ hl.device({
     output      = "eDP-1",
 })
 
+hl.device({
+    name      = "keychron-keychron-q1-he-keyboard-1",
+    kb_layout = "us",
+})
+
 --
 -- KEYBINDINGS
 --
