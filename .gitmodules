@@ -4,3 +4,9 @@
 [submodule "tmux/.config/tmux/plugins/tmux-gruvbox-material"]
 	path = tmux/.config/tmux/plugins/tmux-gruvbox-material
 	url = https://github.com/egel/tmux-gruvbox
+[submodule "tmux/.config/tmux/plugins/tpm"]
+	path = tmux/.config/tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm.git
+[submodule "tmux/.config/tmux/plugins/vim-tmux-navigator"]
+	path = tmux/.config/tmux/plugins/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator.git
