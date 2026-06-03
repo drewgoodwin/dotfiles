@@ -5,7 +5,6 @@
   "margin-right": 10,
   "modules-left": [
     "custom/wlogout",
-    "keyboard-state",
     // "custom/music",
     "hyprland/workspaces"
   ],
@@ -37,16 +36,6 @@
   //   // "on-click-right": "g4music",
   //   "max-length": 35
   // },
-  "keyboard-state": {
-    "numlock": true,
-    "capslock": true,
-    "scrolllock": false,
-    "format": " {name} {icon}",
-    "format-icons": {
-      "locked": " ",
-      "unlocked": " "
-    }
-  },
   "custom/hyprshot": {
     "format": "",
     "on-click": "hyprshot --freeze --mode=region --raw --clipboard-only | swappy -f -",
