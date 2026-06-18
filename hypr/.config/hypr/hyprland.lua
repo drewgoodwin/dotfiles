@@ -320,3 +320,10 @@ hl.window_rule({
     move  = "20 monitor_h-120",
     float = true,
 })
+
+hl.config({
+    cursor = {
+        no_hardware_cursors = true,  -- Fixes VRR flicker on AMD GPUs
+        -- no_break_fs_vrr     = false, -- Allow VRR in fullscreen apps
+    },
+})
