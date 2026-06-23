@@ -323,7 +323,7 @@ hl.window_rule({
 
 hl.config({
     cursor = {
-        no_hardware_cursors = true,  -- Fixes VRR flicker on AMD GPUs
+        no_hardware_cursors = true,  -- Fixes VRR flicker on AMD GPUs. Was getting a secondary, static cursor on a monitor. I still get it occasionally so I know know if this is the final solution.
         -- no_break_fs_vrr     = false, -- Allow VRR in fullscreen apps
     },
 })
