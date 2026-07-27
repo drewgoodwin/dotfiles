@@ -25,7 +25,7 @@ return {
 			{ "<leader>g", group = "Go to / Git" },
 			{ "<leader>h", group = "Hunk (Git)" },
 			{ "<leader>t", group = "Test" },
-			{ "<leader>z", group = "Copilot" },
+			{ "<leader>z", group = "Claude" },
 			{ "<leader>b", desc = "Close quickfix" },
 			{ "<leader>c", desc = "Close Neo-tree" },
 			{ "<leader>e", desc = "Show diagnostic" },
