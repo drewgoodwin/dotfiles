@@ -1,0 +1,31 @@
+onboarding = false
+
+[theme]
+name = "gruvbox"
+
+[keys]
+focus_pane_left = "ctrl+h"
+focus_pane_down = "ctrl+j"
+focus_pane_up = "ctrl+k"
+focus_pane_right = "ctrl+l"
+
+split_vertical = "prefix+%"
+split_horizontal = 'prefix+"'
+
+[[keys.command]]
+key = "prefix+ctrl+y"
+type = "popup"
+command = "lazygit"
+description = "run lazygit"
+width = "90%"
+height = "90%"
+
+[ui.toast]
+delivery = "system"
+
+[ui.toast.herdr]
+position = "bottom-right"
+
+[ui.sound]
+enabled = true
+
