@@ -9,6 +9,6 @@ return {
 	},
 	keys = {
 		{ "<leader>n", "<cmd>Neotree filesystem reveal left<CR>", desc = "Open Neo-tree" },
-		{ "<leader>c", "<cmd>Neotree filesystem close<CR>", desc = "Close Neo-tree" },
+		-- { "<leader>c", "<cmd>Neotree filesystem close<CR>", desc = "Close Neo-tree" },
 	},
 }
