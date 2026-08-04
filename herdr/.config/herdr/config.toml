@@ -35,6 +35,18 @@ description = "run lazygit"
 width = "90%"
 height = "90%"
 
+[[keys.command]]
+key = "prefix+="
+type = "shell"
+command = "python3 ~/.config/herdr/scripts/equalize.py vertical"
+description = "equalize stacked pane heights"
+
+[[keys.command]]
+key = "prefix+minus"
+type = "shell"
+command = "python3 ~/.config/herdr/scripts/equalize.py horizontal"
+description = "equalize side-by-side pane widths"
+
 [ui.toast]
 delivery = "system"
 
