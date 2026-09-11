@@ -18,6 +18,7 @@ return {
 					"yamlls",
 					"clangd",
 					"intelephense",
+					"taplo",
 				},
 			})
 		end,
@@ -155,6 +156,14 @@ return {
 				},
 			})
 
+			-- TOML Language Server (Taplo)
+			vim.lsp.config("taplo", {
+				cmd = { "taplo", "lsp", "stdio" },
+				filetypes = { "toml" },
+				root_markers = { ".taplo.toml", "taplo.toml", ".git" },
+				capabilities = capabilities,
+			})
+
 			-- C/C++ Language Server
 			vim.lsp.config("clangd", {
 				cmd = { "clangd" },
@@ -203,6 +212,7 @@ return {
 				"sqls",
 				"intelephense",
 				"clangd",
+				"taplo",
 			})
 		end,
 	},
