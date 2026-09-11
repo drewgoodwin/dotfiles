@@ -10,7 +10,7 @@ hl.monitor({ output = "HDMI-A-1", mode = "preferred", position = "0x0", scale = 
 --
 
 local terminal = "kitty"
-local fileManager = "nautilus"
+local fileManager = "thunar"
 local menu = "wofi --show drun --allow-images"
 local menu_run_mode = "wofi --show run"
 local browser = "brave --new-window --ozone-platform=wayland"
