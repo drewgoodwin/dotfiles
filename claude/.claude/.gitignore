@@ -1,0 +1,35 @@
+# Runtime state / caches — regenerated automatically, not config
+/backups/
+/cache/
+/daemon/
+/daemon.lock
+/daemon.log
+/daemon.status.json
+/downloads/
+/feedback/
+/file-history/
+/history.jsonl
+/ide/
+/jobs/
+/paste-cache/
+/plans/
+/projects/
+/session-env/
+/sessions/
+/shell-snapshots/
+/stats-cache.json
+/tasks/
+/.last-cleanup
+/.last-update-result.json
+
+# Secrets
+/.credentials.json
+
+# Plugin cache / fetched marketplace data (re-downloaded on demand)
+/plugins/cache/
+/plugins/data/
+/plugins/marketplaces/
+/plugins/.last_inuse_sweep
+
+# Local machine-specific overrides
+/settings.local.json

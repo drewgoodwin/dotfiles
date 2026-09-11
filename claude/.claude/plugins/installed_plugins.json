@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "plugins": {
+    "typescript-lsp@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/home/drew/.claude/plugins/cache/claude-plugins-official/typescript-lsp/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-07-29T11:14:26.992Z",
+        "lastUpdated": "2026-07-29T11:14:26.992Z"
+      }
+    ]
+  }
+}

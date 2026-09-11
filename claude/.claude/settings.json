@@ -1,0 +1,29 @@
+{
+  "enabledPlugins": {
+    "typescript-lsp@claude-plugins-official": true
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "command": "bash '/home/drew/.claude/hooks/herdr-agent-state.sh' session",
+            "timeout": 10,
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      }
+    ]
+  },
+  "statusLine": {
+    "command": "bash \"$HOME/.claude/statusline.sh\"",
+    "type": "command"
+  },
+  "theme": "dark",
+  "voice": {
+    "enabled": true,
+    "mode": "hold"
+  },
+  "voiceEnabled": true
+}
