@@ -1,3 +1,4 @@
 *.log
 session.json
 release-notes.json
+plugins/github/

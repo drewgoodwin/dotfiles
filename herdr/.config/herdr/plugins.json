@@ -1,5 +1,134 @@
 [
   {
+    "plugin_id": "numbered-workspaces",
+    "name": "Numbered Workspaces",
+    "version": "0.3.0",
+    "min_herdr_version": "0.7.4",
+    "description": "Mirror each space's ordinal into a metadata token so the sidebar can show it.",
+    "manifest_path": "/home/drew/stow/herdr/.config/herdr/plugins/github/numbered-workspaces-b180d9d59454/herdr-plugin.toml",
+    "plugin_root": "/home/drew/stow/herdr/.config/herdr/plugins/github/numbered-workspaces-b180d9d59454",
+    "enabled": true,
+    "platforms": [
+      "linux",
+      "macos"
+    ],
+    "actions": [
+      {
+        "id": "renumber",
+        "title": "Renumber spaces",
+        "contexts": [
+          "global"
+        ],
+        "command": [
+          "./renumber.sh"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "on": "workspace.closed",
+        "command": [
+          "./renumber.sh"
+        ]
+      },
+      {
+        "on": "workspace.created",
+        "command": [
+          "./renumber.sh"
+        ]
+      },
+      {
+        "on": "workspace.focused",
+        "command": [
+          "./renumber.sh"
+        ]
+      },
+      {
+        "on": "workspace.moved",
+        "command": [
+          "./renumber.sh"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "abrose",
+      "repo": "herdr-numbered-workspaces",
+      "resolved_commit": "a204b92ddecf177d5ade2279e65cf193139762fb",
+      "managed_path": "/home/drew/.config/herdr/plugins/github/numbered-workspaces-b180d9d59454",
+      "installed_unix_ms": 1789081587423
+    }
+  },
+  {
+    "plugin_id": "ray.file-explorer",
+    "name": "Yazi Explorer",
+    "version": "1.1.0",
+    "min_herdr_version": "0.7.0",
+    "description": "Open Yazi (terminal file manager) in a herdr pane",
+    "manifest_path": "/home/drew/stow/herdr/.config/herdr/plugins/github/ray.file-explorer-921f378e3e1b/herdr-plugin.toml",
+    "plugin_root": "/home/drew/stow/herdr/.config/herdr/plugins/github/ray.file-explorer-921f378e3e1b",
+    "enabled": true,
+    "platforms": [
+      "linux",
+      "macos"
+    ],
+    "build": [
+      {
+        "command": [
+          "bash",
+          "-c",
+          "command -v yazi >/dev/null 2>&1 || { [ \"$(uname -s)\" = \"Darwin\" ] && command -v brew >/dev/null 2>&1 && exec brew install yazi; echo \"Yazi is required. Install it from https://yazi-rs.github.io/docs/installation\" >&2; exit 1; }"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "open",
+        "title": "Open file explorer",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "bash",
+          "-c",
+          "DIR=\"$(bash \"$HERDR_PLUGIN_ROOT/bin/resolve-dir.sh\")\"; exec \"${HERDR_BIN_PATH:-herdr}\" plugin pane open --plugin ray.file-explorer --entrypoint explorer --placement split --cwd \"$DIR\""
+        ]
+      },
+      {
+        "id": "open-tab",
+        "title": "Open file explorer (new tab)",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "bash",
+          "-c",
+          "DIR=\"$(bash \"$HERDR_PLUGIN_ROOT/bin/resolve-dir.sh\")\"; exec \"${HERDR_BIN_PATH:-herdr}\" plugin pane open --plugin ray.file-explorer --entrypoint explorer --placement tab --cwd \"$DIR\""
+        ]
+      }
+    ],
+    "panes": [
+      {
+        "id": "explorer",
+        "title": "Explorer",
+        "placement": "split",
+        "command": [
+          "bash",
+          "-c",
+          "exec yazi"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "speardragon",
+      "repo": "herdr-yazi",
+      "resolved_commit": "54aa4e6dff480189630fa3593146cdcc2768ade9",
+      "managed_path": "/home/drew/.config/herdr/plugins/github/ray.file-explorer-921f378e3e1b",
+      "installed_unix_ms": 1787785403842
+    }
+  },
+  {
     "plugin_id": "vim-herdr-navigation",
     "name": "Vim Herdr Navigation",
     "version": "0.1.0",

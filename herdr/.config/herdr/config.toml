@@ -47,6 +47,9 @@ type = "shell"
 command = "python3 ~/.config/herdr/scripts/equalize.py horizontal"
 description = "equalize side-by-side pane widths"
 
+[session]
+resume_agents_on_restore = true
+
 [ui.toast]
 delivery = "system"
 
@@ -56,3 +59,20 @@ position = "bottom-right"
 [ui.sound]
 enabled = true
 
+[experimental]
+kitty_graphics = true
+
+[ui]
+agent_panel_sort = "priority"
+
+[ui.sidebar.spaces]
+rows = [
+  ["$num", "state_icon", "workspace"],
+  ["branch", "git_status"],
+]
+
+[ui.sidebar.agents]
+rows = [
+  ["state_icon", "agent", "state_text"],
+  ["workspace", "tab"],
+]
