@@ -3,3 +3,7 @@
 /home/*/.local/share/Steam/steamapps/downloading
 /home/*/.local/share/Steam/steamapps/shadercache
 /home/*/.steam
+
+# XDG cache dirs — disposable by definition (browser caches, yay/paru build
+# and package cache, go-build, node-gyp, restic's own metadata cache, etc.)
+/home/*/.cache
