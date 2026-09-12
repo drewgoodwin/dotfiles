@@ -66,12 +66,14 @@ kitty_graphics = true
 agent_panel_sort = "priority"
 
 [ui.sidebar.spaces]
+row_gap = 1
 rows = [
   ["$num", "state_icon", "workspace"],
   ["branch", "git_status"],
 ]
 
 [ui.sidebar.agents]
+row_gap = 1
 rows = [
   ["state_icon", "agent", "state_text"],
   ["workspace", "tab"],
