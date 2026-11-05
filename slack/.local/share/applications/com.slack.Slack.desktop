@@ -1,0 +1,16 @@
+# Local override (2026-11-05): Slack's Electron labels its whole window with HDR-style colour info
+# via Wayland colour management, so fullscreen Slack pushes eDP-1 into HDR and looks dim.
+# Delete this file to go back to the stock flatpak launcher (e.g. after a Slack/Electron fix).
+[Desktop Entry]
+Name=Slack
+StartupWMClass=Slack
+Comment=Slack Desktop
+GenericName=Slack Client for Linux
+Exec=/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=com.slack.Slack --file-forwarding com.slack.Slack --disable-features=WaylandWpColorManagerV1 @@u %U @@
+Icon=com.slack.Slack
+Type=Application
+Categories=GNOME;GTK;Network;InstantMessaging;
+MimeType=x-scheme-handler/slack;
+X-GNOME-UsesNotifications=true
+X-Flatpak-RenamedFrom=slack.desktop;
+X-Flatpak=com.slack.Slack
