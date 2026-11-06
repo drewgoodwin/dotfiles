@@ -16,8 +16,15 @@ tooltip label {
   color: @fg0;
 }
 
+/* Keep the window itself transparent and paint the rounded background on the
+   inner box; painting it on the window leaves solid corners outside the curve. */
 window#waybar {
+  background-color: transparent;
+}
+
+window#waybar > box {
   background-color: @sumiInk1;
+  border-radius: 0.5em;
 }
 
 #idle_inhibitor {
